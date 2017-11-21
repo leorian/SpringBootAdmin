@@ -38,6 +38,15 @@ public class User extends BaseEntity {
     @FieldComment("积分")
     private Long point = -1l;
 
+    @FieldComment("用户图标-原始")
+    private String icon;
+
+    @FieldComment("用户图标-小型")
+    private String iconSmall;
+
+    @FieldComment("用户图标-大型")
+    private String iconBig;
+
     public String getId() {
         return id;
     }
@@ -108,6 +117,30 @@ public class User extends BaseEntity {
 
     public void setPoint(Long point) {
         this.point = point;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getIconSmall() {
+        return iconSmall;
+    }
+
+    public void setIconSmall(String iconSmall) {
+        this.iconSmall = iconSmall;
+    }
+
+    public String getIconBig() {
+        return iconBig;
+    }
+
+    public void setIconBig(String iconBig) {
+        this.iconBig = iconBig;
     }
 
     @Override
