@@ -54,3 +54,15 @@ public class Tag extends BaseEntity {
         return JSON.toJSONString(this);
     }
 }
+
+/**
+ * CREATE TABLE `website_tag` (
+ * `id` varchar(32) DEFAULT NULL,
+ * `code` varchar(128) DEFAULT NULL,
+ * `name` varchar(256) DEFAULT NULL,
+ * `create_id` varchar(64) DEFAULT NULL,
+ * `create_date` datetime DEFAULT NULL,
+ * `update_id` varchar(64) DEFAULT NULL,
+ * `update_date` datetime DEFAULT NULL
+ * ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ */
