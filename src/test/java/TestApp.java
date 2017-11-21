@@ -1,5 +1,8 @@
 import com.geekcattle.Application;
+import com.geekcattle.mapper.website.RoleMapper;
+import com.geekcattle.model.website.Role;
 import com.geekcattle.service.console.LogService;
+import com.geekcattle.util.UuidUtil;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,6 +29,9 @@ public class TestApp extends TestCase {
     @Autowired
     RedisTemplate<String, String> redisTemplate;
 
+    @Autowired
+    private RoleMapper roleMapper;
+
     @Test
     public void testRedis(){
         redisTemplate.opsForValue().set("geekcattle","df1111111111111");
@@ -34,5 +40,14 @@ public class TestApp extends TestCase {
         System.out.println(redisTemplate.opsForValue().get("geekcattle"));
     }
 
+
+    @Test
+    public void testInsertWebsiteRole() {
+        Role role = new Role();
+        role.setId(UuidUtil.getUUID());
+        role.setCode("OrdinaryMember");
+        role.setName("普通会员");
+        roleMapper.insert(role);
+    }
 
 }
