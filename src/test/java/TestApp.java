@@ -1,5 +1,7 @@
 import com.geekcattle.Application;
+import com.geekcattle.mapper.website.CategoryMapper;
 import com.geekcattle.mapper.website.RoleMapper;
+import com.geekcattle.model.website.Category;
 import com.geekcattle.model.website.Role;
 import com.geekcattle.service.console.LogService;
 import com.geekcattle.util.UuidUtil;
@@ -32,6 +34,9 @@ public class TestApp extends TestCase {
     @Autowired
     private RoleMapper roleMapper;
 
+    @Autowired
+    private CategoryMapper categoryMapper;
+
     @Test
     public void testRedis(){
         redisTemplate.opsForValue().set("geekcattle","df1111111111111");
@@ -48,6 +53,14 @@ public class TestApp extends TestCase {
         role.setCode("OrdinaryMember");
         role.setName("普通会员");
         roleMapper.insert(role);
+    }
+
+    @Test
+    public void testInsertWebsiteCategory() {
+        Category category = new Category();
+        category.setId(UuidUtil.getUUID());
+        category.setId("资源天地");
+        categoryMapper.insert(category);
     }
 
 }

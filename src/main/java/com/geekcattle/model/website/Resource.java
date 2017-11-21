@@ -3,12 +3,17 @@ package com.geekcattle.model.website;
 import com.alibaba.fastjson.JSON;
 import com.geekcattle.annotation.ClassComment;
 import com.geekcattle.annotation.FieldComment;
+import org.apache.ibatis.type.Alias;
+
+import javax.persistence.Table;
 
 /**
  * Created by xiezg@317hu.com on 2017/11/21 0021.
  * 资源
  */
 @ClassComment("资源实体类")
+@Table(name = "website_resource")
+@Alias("WebSiteResource")
 public class Resource extends BaseEntity {
 
     @FieldComment("主键ID")
