@@ -1,7 +1,9 @@
 import com.geekcattle.Application;
 import com.geekcattle.mapper.website.CategoryMapper;
+import com.geekcattle.mapper.website.ResourceMapper;
 import com.geekcattle.mapper.website.RoleMapper;
 import com.geekcattle.model.website.Category;
+import com.geekcattle.model.website.Resource;
 import com.geekcattle.model.website.Role;
 import com.geekcattle.service.console.LogService;
 import com.geekcattle.util.UuidUtil;
@@ -37,9 +39,12 @@ public class TestApp extends TestCase {
     @Autowired
     private CategoryMapper categoryMapper;
 
+    @Autowired
+    private ResourceMapper resourceMapper;
+
     @Test
-    public void testRedis(){
-        redisTemplate.opsForValue().set("geekcattle","df1111111111111");
+    public void testRedis() {
+        redisTemplate.opsForValue().set("geekcattle", "df1111111111111");
         Jedis jedis = jedisPool.getResource();
         jedis.setex("geek", 1000, "cattle");
         System.out.println(redisTemplate.opsForValue().get("geekcattle"));
@@ -61,6 +66,14 @@ public class TestApp extends TestCase {
         category.setId(UuidUtil.getUUID());
         category.setId("资源天地");
         categoryMapper.insert(category);
+    }
+
+    @Test
+    public void testInsertWebsiteResource() {
+        Resource resource = new Resource();
+        resource.setId(UuidUtil.getUUID());
+        resource.setTitle("手把手教你JAVA入门");
+        resourceMapper.insert(resource);
     }
 
 }

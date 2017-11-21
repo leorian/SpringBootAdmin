@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geekcattle.mapper.website.ResourceMapper" >
+  <resultMap id="BaseResultMap" type="com.geekcattle.model.website.Resource" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="introduce" property="introduce" jdbcType="VARCHAR"/>
+    <result column="content" property="content" jdbcType="VARCHAR"/>
+    <result column="secret_area" property="secretArea" jdbcType="VARCHAR"/>
+    <result column="category_id" property="categoryId" jdbcType="VARCHAR"/>
+    <result column="tag_id" property="tagId" jdbcType="VARCHAR"/>
+    <result column="free" property="free" jdbcType="BOOLEAN"/>
+    <result column="price" property="price" jdbcType="BIGINT"/>
+    <result column="icon" property="icon" jdbcType="VARCHAR"/>
+    <result column="icon_small" property="iconSmall" jdbcType="VARCHAR"/>
+    <result column="icon_big" property="iconBig" jdbcType="VARCHAR"/>
+    <result column="create_id" property="createId" jdbcType="VARCHAR"/>
+    <result column="update_id" property="createId" jdbcType="VARCHAR"/>
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP"/>
+  </resultMap>
+</mapper>

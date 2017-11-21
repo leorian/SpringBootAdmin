@@ -154,3 +154,24 @@ public class Resource extends BaseEntity {
         return JSON.toJSONString(this);
     }
 }
+
+/**
+ * CREATE TABLE `website_resource` (
+ * `id` varchar(32) DEFAULT NULL,
+ * `title` varchar(256) DEFAULT NULL,
+ * `introduce` varchar(512) DEFAULT NULL,
+ * `content` varchar(4096) DEFAULT NULL,
+ * `secret_area` varchar(4096) DEFAULT NULL,
+ * `category_id` varchar(32) DEFAULT NULL,
+ * `tag_id` varchar(32) DEFAULT NULL,
+ * `free` tinyint(4) DEFAULT NULL,
+ * `price` bigint(20) DEFAULT NULL,
+ * `icon` varchar(256) DEFAULT NULL,
+ * `icon_small` varchar(256) DEFAULT NULL,
+ * `icon_big` varchar(256) DEFAULT NULL,
+ * `create_id` varchar(64) DEFAULT NULL,
+ * `create_date` datetime DEFAULT NULL,
+ * `update_id` varchar(64) DEFAULT NULL,
+ * `update_date` datetime DEFAULT NULL
+ * ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ */
