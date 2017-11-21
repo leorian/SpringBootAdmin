@@ -38,6 +38,15 @@ public class Resource extends BaseEntity {
     @FieldComment("金币")
     private Long price = -1l;
 
+    @FieldComment("资源图标-原始")
+    private String icon;
+
+    @FieldComment("资源图标-小型")
+    private String iconSmall;
+
+    @FieldComment("资源图标-大型")
+    private String iconBig;
+
 
     public String getId() {
         return id;
@@ -109,6 +118,30 @@ public class Resource extends BaseEntity {
 
     public void setPrice(Long price) {
         this.price = price;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getIconSmall() {
+        return iconSmall;
+    }
+
+    public void setIconSmall(String iconSmall) {
+        this.iconSmall = iconSmall;
+    }
+
+    public String getIconBig() {
+        return iconBig;
+    }
+
+    public void setIconBig(String iconBig) {
+        this.iconBig = iconBig;
     }
 
     @Override
