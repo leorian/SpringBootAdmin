@@ -2,9 +2,11 @@ import com.geekcattle.Application;
 import com.geekcattle.mapper.website.CategoryMapper;
 import com.geekcattle.mapper.website.ResourceMapper;
 import com.geekcattle.mapper.website.RoleMapper;
+import com.geekcattle.mapper.website.TagMapper;
 import com.geekcattle.model.website.Category;
 import com.geekcattle.model.website.Resource;
 import com.geekcattle.model.website.Role;
+import com.geekcattle.model.website.Tag;
 import com.geekcattle.service.console.LogService;
 import com.geekcattle.util.UuidUtil;
 import junit.framework.TestCase;
@@ -42,6 +44,9 @@ public class TestApp extends TestCase {
     @Autowired
     private ResourceMapper resourceMapper;
 
+    @Autowired
+    private TagMapper tagMapper;
+
     @Test
     public void testRedis() {
         redisTemplate.opsForValue().set("geekcattle", "df1111111111111");
@@ -74,6 +79,15 @@ public class TestApp extends TestCase {
         resource.setId(UuidUtil.getUUID());
         resource.setTitle("手把手教你JAVA入门");
         resourceMapper.insert(resource);
+    }
+
+    @Test
+    public void testInsertTagResource() {
+        Tag tag = new Tag();
+        tag.setId(UuidUtil.getUUID());
+        tag.setCode("java");
+        tag.setName("java");
+        tagMapper.insert(tag);
     }
 
 }
