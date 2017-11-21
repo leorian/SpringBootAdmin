@@ -40,6 +40,8 @@ public class PublicController {
             Boolean isAuth = SecurityUtils.getSubject().isAuthenticated();
             if(isAuth){
                 return "redirect:/console/index";
+            } else {
+                SecurityUtils.getSubject().logout();
             }
         }catch (Exception e){
             e.printStackTrace();
