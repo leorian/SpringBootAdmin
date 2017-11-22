@@ -153,3 +153,24 @@ public class User extends BaseEntity {
         return JSON.toJSONString(this);
     }
 }
+
+/**
+ * CREATE TABLE `website_user` (
+ * `id` varchar(32) DEFAULT NULL,
+ * `name` varchar(256) DEFAULT NULL,
+ * `email` varchar(64) DEFAULT NULL,
+ * `qq` varchar(20) DEFAULT NULL,
+ * `cell_phone` varchar(11) DEFAULT NULL,
+ * `password` varchar(256) DEFAULT NULL,
+ * `role_id` varchar(32) DEFAULT NULL,
+ * `gold` bigint(20) DEFAULT NULL,
+ * `point` bigint(20) DEFAULT NULL,
+ * `icon` varchar(256) DEFAULT NULL,
+ * `icon_small` varchar(256) DEFAULT NULL,
+ * `icon_big` varchar(256) DEFAULT NULL,
+ * `create_id` varchar(64) DEFAULT NULL,
+ * `create_date` datetime DEFAULT NULL,
+ * `update_id` varchar(64) DEFAULT NULL,
+ * `update_date` datetime DEFAULT NULL
+ * ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ */

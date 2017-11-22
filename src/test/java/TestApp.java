@@ -1,12 +1,6 @@
 import com.geekcattle.Application;
-import com.geekcattle.mapper.website.CategoryMapper;
-import com.geekcattle.mapper.website.ResourceMapper;
-import com.geekcattle.mapper.website.RoleMapper;
-import com.geekcattle.mapper.website.TagMapper;
-import com.geekcattle.model.website.Category;
-import com.geekcattle.model.website.Resource;
-import com.geekcattle.model.website.Role;
-import com.geekcattle.model.website.Tag;
+import com.geekcattle.mapper.website.*;
+import com.geekcattle.model.website.*;
 import com.geekcattle.service.console.LogService;
 import com.geekcattle.util.UuidUtil;
 import junit.framework.TestCase;
@@ -46,6 +40,9 @@ public class TestApp extends TestCase {
 
     @Autowired
     private TagMapper tagMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Test
     public void testRedis() {
@@ -88,6 +85,14 @@ public class TestApp extends TestCase {
         tag.setCode("java");
         tag.setName("java");
         tagMapper.insert(tag);
+    }
+
+    @Test
+    public void testInsertUserResource() {
+        User user = new User();
+        user.setId(UuidUtil.getUUID());
+        user.setName("螺丝");
+        userMapper.insert(user);
     }
 
 }
